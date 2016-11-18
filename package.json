@@ -1,7 +1,7 @@
 {
-  "name": "hmpo-frontend-toolkit",
-  "version": "4.0.0-rev1",
-  "description": "Set of common UI patterns/styles for hmpo projects",
+  "name": "hof-frontend-toolkit",
+  "version": "0.0.1",
+  "description": "Set of common UI patterns/styles for hof projects",
   "main": "index.js",
   "scripts": {
     "postinstall": "./build",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/UKHomeOffice/passports-frontend-toolkit.git"
+    "url": "https://github.com/UKHomeOfficeForms/hof-frontend-toolkit.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/UKHomeOffice/passports-frontend-toolkit/issues"
+    "url": "https://github.com/UKHomeOfficeForms/hof-frontend-toolkit/issues"
   },
-  "homepage": "https://github.com/UKHomeOffice/passports-frontend-toolkit",
+  "homepage": "https://github.com/UKHomeOfficeForms/hof-frontend-toolkit",
   "dependencies": {
     "async": "^0.9.0",
     "browserify": "^4.0.0",
