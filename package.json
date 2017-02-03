@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Set of common UI patterns/styles for hof projects",
   "main": "index.js",
+  "sass": "assets/stylesheets/app.scss",
   "scripts": {
     "postinstall": "./build",
     "test-client": "./node_modules/karma/bin/karma start ./test/client/karma.conf.js",
