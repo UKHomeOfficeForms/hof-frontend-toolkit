@@ -3,7 +3,6 @@
 
 ul,
 ol {
-  list-style-type: none;
   padding: 0;
 }
 
@@ -33,3 +32,9 @@ ol {
   margin-bottom: 5px;
 }
 
+ul {
+  @extend .list-bullet;
+}
+ol {
+  @extend .list-number;
+}
