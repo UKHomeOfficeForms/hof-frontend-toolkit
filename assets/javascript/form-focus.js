@@ -8,7 +8,8 @@
 
 'use strict';
 
-var _ = require('underscore');
+var each = require('lodash.foreach');
+var groupBy = require('lodash.groupby');
 
 var NAME = 'form-focus';
 
@@ -28,7 +29,7 @@ function blurred(e) {
 
 function clicked(e, target) {
     target = target || helpers.target(e);
-    _.each(groups[target.name], function (input) {
+    each(groups[target.name], function (input) {
         if (input.checked) {
             helpers.addClass(input.parentNode, selectedClass);
         } else {
@@ -56,7 +57,7 @@ function bindSummaryEvents(summary) {
 }
 
 function setupLabels(labels) {
-    groups = _.groupBy(document.getElementsByTagName('input'), 'name');
+    groups = groupBy(document.getElementsByTagName('input'), 'name');
     for (var i = 0, len = labels.length; i < len; i++) {
         helpers.once(labels[i], NAME, bindInputEvents);
     }

@@ -1,6 +1,6 @@
 'use strict';
 
-var _ = require('underscore');
+var each = require('lodash.foreach');
 
 var DESKTOP_WIDTH = 769;
 
@@ -88,7 +88,7 @@ helpers.addClass = function (el, className) {
 };
 
 helpers.addClasses = function (el, classNames) {
-    _.each(classNames, function (className) {
+    each(classNames, function (className) {
         helpers.addClass(el, className);
     });
 };
@@ -120,7 +120,7 @@ helpers.getElementsByClass = function (parent, tag, className) {
         return parent.getElementsByClassName(className);
     } else {
         var elems = [];
-        _.each(parent.getElementsByTagName(tag), function (t) {
+        each(parent.getElementsByTagName(tag), function (t) {
             if (helpers.hasClass(t, className)) {
                 elems.push(t);
             }
