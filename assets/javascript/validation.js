@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var each = require('lodash.foreach');
 
 var helpers = require('./helpers');
 
@@ -40,7 +40,7 @@ function setup(summary) {
 
     var errors = summary.getElementsByTagName('a');
 
-    _.each(errors, function (error) {
+    each(errors, function (error) {
         helpers.addEvent(error, 'click', clicked);
         helpers.addEvent(error, 'keydown', pressed);
     });

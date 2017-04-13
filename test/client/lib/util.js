@@ -1,5 +1,3 @@
-var _ = require('underscore');
-
 module.exports = {
     triggerEvent: function triggerEvent(element, event) {
         var evt = document.createEvent('Event');
@@ -11,7 +9,7 @@ module.exports = {
         options = options || {};
         var evt = document.createEvent('Event');
         evt.initEvent(event, true, true);
-        _.extend(evt, options);
+        Object.assign(evt, options);
         element.dispatchEvent(evt);
     }
 };

@@ -1,6 +1,7 @@
 'use strict';
 
-var _ = require('underscore');
+var each = require('lodash.foreach');
+var groupBy = require('lodash.groupby');
 
 var helpers = require('./helpers'),
     inputs, groups,
@@ -10,7 +11,7 @@ var helpers = require('./helpers'),
 function inputClicked(e, target) {
     target = target || helpers.target(e);
     var shown;
-    _.each(groups[target.name], function (input) {
+    each(groups[target.name], function (input) {
         var id = input.getAttribute('aria-controls');
         var toggle = document.getElementById(id);
         if (toggle) {
@@ -53,7 +54,7 @@ function progressiveReveal() {
 
     if (forms.length > 0) {
         inputs = document.getElementsByTagName('input');
-        groups = _.groupBy(inputs, 'name');
+        groups = groupBy(inputs, 'name');
         for (var i = 0, num = inputs.length; i < num; i++) {
             input = inputs[i];
             if (input.type.match(/radio|checkbox/)) {
