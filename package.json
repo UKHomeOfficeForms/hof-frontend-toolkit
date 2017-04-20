@@ -5,9 +5,8 @@
   "main": "index.js",
   "sass": "assets/stylesheets/app.scss",
   "scripts": {
-    "postinstall": "./build",
-    "test-client": "./node_modules/karma/bin/karma start ./test/client/karma.conf.js",
-    "test-sass": "node-sass assets/stylesheets/app.scss -o assets/stylesheets",
+    "test-client": "karma start ./test/client/karma.conf.js",
+    "test-sass": "npm-sass assets/stylesheets/app.scss 2>&1 >/dev/null",
     "test": "npm run test-client && npm run test-sass"
   },
   "repository": {
@@ -21,21 +20,20 @@
   },
   "homepage": "https://github.com/UKHomeOfficeForms/hof-frontend-toolkit",
   "dependencies": {
-    "async": "^0.9.0",
     "browserify": "^4.0.0",
     "govuk_frontend_toolkit": "^4.5.0",
     "lodash.foreach": "^4.5.0",
-    "lodash.groupby": "^4.6.0",
-    "mustache": "^1.1.0"
+    "lodash.groupby": "^4.6.0"
   },
   "devDependencies": {
     "jquery": "^2.1.4",
     "karma": "0.12.24",
     "karma-browserify": "0.2.1",
     "karma-chai": "0.1.0",
+    "karma-cli": "^1.0.1",
     "karma-mocha": "0.1.9",
     "karma-phantomjs-launcher": "0.1.4",
     "karma-sinon-chai": "0.3.0",
-    "node-sass": "^2.1.1"
+    "npm-sass": "^2.0.0"
   }
 }
