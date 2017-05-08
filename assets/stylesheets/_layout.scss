@@ -5,7 +5,7 @@
     }
 }
 
-#content {
+.main {
     @extend %site-width-container;
     padding-bottom: $gutter;
     @include media(desktop) {
