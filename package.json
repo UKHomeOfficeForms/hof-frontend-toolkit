@@ -34,6 +34,7 @@
     "karma-mocha": "0.1.9",
     "karma-phantomjs-launcher": "0.1.4",
     "karma-sinon-chai": "0.3.0",
+    "mocha": "^3.3.0",
     "npm-sass": "^2.0.0"
   }
 }
