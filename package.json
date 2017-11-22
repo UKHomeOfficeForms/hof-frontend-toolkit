@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/UKHomeOfficeForms/hof-frontend-toolkit",
   "dependencies": {
-    "browserify": "^4.0.0",
     "govuk_frontend_toolkit": "^4.5.0",
     "lodash.foreach": "^4.5.0",
     "lodash.groupby": "^4.6.0"
   },
   "devDependencies": {
+    "browserify": "^4.0.0",
     "jquery": "^2.1.4",
     "karma": "^1.7.0",
     "karma-browserify": "0.2.1",
