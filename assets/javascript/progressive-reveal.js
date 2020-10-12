@@ -20,6 +20,10 @@ function inputClicked(e, target) {
                 toggle.setAttribute('aria-hidden', 'false');
                 helpers.removeClass(toggle, hiddenClass);
                 shown = toggle.id;
+                if (input === target) {
+                    toggle.getElementsByTagName('input')[0].focus();
+                }
+                
             } else {
                 input.setAttribute('aria-expanded', 'false');
                 if (shown !== toggle.id) {
