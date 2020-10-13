@@ -43,17 +43,17 @@ describe('Progressive Reveal', function () {
                 $('div').append('<input type="text" id="textbox">');
                 progressiveReveal();
             });
-            
+
             it('reveals text input', function (){
                 $('#check').click();
-                ($('#textbox-panel').attr('aria-hidden') == 'false').should.be.ok;
+                ($('#textbox-panel').attr('aria-hidden') === 'false').should.be.ok;
             });
 
             it('focuses on text input', function (){
                 $('#check').click();
-                (document.activeElement.id == 'textbox').should.be.ok;
+                (document.activeElement.id === 'textbox').should.be.ok;
             });
-        })
+        });
 
         describe('parent panel', function () {
 
