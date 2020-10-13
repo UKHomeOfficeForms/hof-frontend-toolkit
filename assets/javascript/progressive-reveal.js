@@ -20,7 +20,7 @@ function inputClicked(e, target) {
                 toggle.setAttribute('aria-hidden', 'false');
                 helpers.removeClass(toggle, hiddenClass);
                 shown = toggle.id;
-                if (input === target) {
+                if ((input === target) && (toggle.getElementsByTagName('input').length !== 0)) {
                     toggle.getElementsByTagName('input')[0].focus();
                 }
                 
