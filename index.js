@@ -5,5 +5,6 @@ module.exports = {
     validation: require('./assets/javascript/validation'),
     detailsSummary: function() {
         require('./assets/javascript/vendor/details.polyfill')
-    }
+    },
+    characterCount: require('./assets/javascript/character-count')
 };
