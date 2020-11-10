@@ -44,9 +44,8 @@ CharacterCount.prototype.handleBlur = function () {
 };
 
 CharacterCount.prototype.init = function() {
-
   // Updates hint to js-enabled message
-  this.$maxlengthHint.innerHTML = 'You have ' + this.maxLength.toString() + ' characters remaining';
+  this.updateCount();
 
   // remove maxLength restriction on element
   this.$textarea.removeAttribute('maxlength');
