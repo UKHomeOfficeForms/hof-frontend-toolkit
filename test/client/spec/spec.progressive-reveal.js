@@ -55,6 +55,26 @@ describe('Progressive Reveal', function () {
             });
         });
 
+        describe('with hidden textarea', function () { // todo
+            beforeEach(function () {
+                $('label').append('<input type="checkbox" id="check" name="check" aria-controls="textbox-panel">CheckBox');
+                $('form').append('<div id="textbox-panel" class="reveal js-hidden" aria-hidden="true">');
+                $('div').append('<textarea id="textbox">');
+                progressiveReveal();
+            });
+
+            it('reveals text input', function (){
+                $('#check').click();
+                ($('#textbox-panel').attr('aria-hidden') === 'false').should.be.ok;
+            });
+
+            it('focuses on text input', function (){
+                $('#check').click();
+                (document.activeElement.id === 'textbox').should.be.ok;
+            });
+        });
+
+
         describe('parent panel', function () {
 
             beforeEach(function () {
