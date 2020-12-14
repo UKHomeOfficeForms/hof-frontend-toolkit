@@ -74,6 +74,19 @@ describe('character-count', function () {
 
   });
 
+  describe('high character counts', function() {
+
+    beforeEach(function () {
+      $('form').append($('<div id="test-group"><textarea name="test" id="test" class="maxlength" maxlength="2000"></textarea><span id="test-maxlength-hint" class="form-hint">2000 maximum characters</span></div>'));
+      characterCount();
+    });
+
+    it('should insert commas when character count is 1000 or more, so screen readers do not read the number as a year', function () {
+      $('#test-maxlength-hint').text().should.have.string('You have 2,000 characters remaining');
+    });
+
+  });
+
   describe('update on timer for assistive technologies', function () {
 
     beforeEach(function () {

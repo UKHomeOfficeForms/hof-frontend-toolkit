@@ -15,7 +15,18 @@ CharacterCount.prototype.updateCount = function() {
     remainderSuffix = ' too many';
   }
 
-  this.$maxlengthHint.innerHTML = 'You have ' + Math.abs(this.maxLength - currentLength).toString() + characterNoun + remainderSuffix;
+  function addCommas(numString) {
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(numString)) {
+      numString = numString.replace(rgx, '$1' + ',' + '$2');
+    }
+    return numString;
+  }
+
+  // format the number with commas separating thousands, so screen readers do not read them as a year
+  var number = addCommas(Math.abs(this.maxLength - currentLength).toString());
+
+  this.$maxlengthHint.innerHTML = 'You have ' + number + characterNoun + remainderSuffix;
 
   if (currentLength >= this.maxLength + 1) {
     helpers.removeClass(this.$maxlengthHint, 'form-hint');
